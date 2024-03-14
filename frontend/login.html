@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', path='/favicon.ico') }}">
+    <script src="{{ url_for('static', path='/login.js') }}"></script>
+    <link href="{{ url_for('static', path='/login.css') }}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/14b02c289f.js" crossorigin="anonymous"></script>
+    <title>the book garden</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">The book garden  </div>
+        <input type="search" placeholder="Buscar">
+        <input type="button" value="buscar" class="buscar">
+        <button type="button" class="login_i" onclick="regresar()">Inicio</button>
+        <button type="button" class="modo" onclick="modoOscuro()"><i class="fa-solid fa-circle-half-stroke"></i></button>
+        <button type="button" class="modo" onclick="openMenu()"><i class="fa-solid fa-bars"></i></button>
+
+</nav> 
+
+    <div class="log_container">
+
+        <div class="singin" id="singin">
+        <h2>Bienvenido</h2>
+
+            <input type="text" placeholder="usuario">
+            <input type="password" placeholder="contraseña">
+            <input type="submit">
+            
+            <button type="button" onclick=" inicioSesion()">olvide mi contraseña</button>
+            <button type="button" onclick=" crearCuenta()">crear cuenta</button>
+            
+        </div>
+
+        <div class="login" id="login">
+
+            <img clas="background"src="{{ url_for('static', path='/fondo.jpg') }}" >
+            Nombre: <input type="text" placeholder="Nombre">
+            Apellido: <input type="text" placeholder="Apellido">
+            Email: <input type="email" placeholder="example@gmail.com">
+            Contraseña: <input type="password" placeholder="contraseña">
+            Repita contraseña: <input type="password" placeholder="contraseña">
+                            <input type="submit" placeholder="crear">
+
+            <button type="button" onclick=" inicioSesion()">Ya tengo cuenta</button>
+
+        </div>
+    </div>
+    
+    <footer><a href="#">Terminos y condiciones Derechos reservados Gardenbook.com@2024 </a>
+    </footer>
+
+</body>
+</html>

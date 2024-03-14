@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    position: fixed;
+    display: flex;
+    z-index: 200;
+    width: 98%;
+    height: 40px;
+    margin: auto;
+    justify-content: space-evenly;
+    background-color: rgb(28,28,28 );
+    border-radius: 16px;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    -ms-border-radius: 16px;
+    -o-border-radius: 16px;
+}
+
+.logo{
+    position: relative;
+    padding: 3px;
+    font-size: 30px;
+    color: white;
+}
+
+.log_container{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 600px;
+}
+.login{
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 600px;
+    top: 20px;
+    font-size: 20px;
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+
+}
+
+.login > input{
+    position: relative;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width: 300px;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.login > img{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 600px;
+}
+
+.singin{
+    display: none;
+    position: relative;
+    width: 300px;
+    height: 30px;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.singin > input{
+
+    position: relative;
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.singin > a{
+    padding: 5px;
+}
+
+.singin > h2{
+    position: relative;
+    left: 18%;
+    padding: 5px;
+    font-size: 40px;
+    
+}
+
+footer{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    background-color: rgb(125,125,125 );
+    
+}
