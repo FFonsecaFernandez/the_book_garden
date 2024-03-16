@@ -6,22 +6,43 @@
 nav{
     position: fixed;
     display: flex;
-    z-index: 200;
-    width: 98%;
-    height: 40px;
+    z-index: 1000;
+    width: 900px;
+    height: 50px;
+    left: calc(50% - 450px);
     margin: auto;
-    justify-content: space-evenly;
     background-color: rgb(28,28,28 );
     border-radius: 16px;
     -webkit-border-radius: 16px;
     -moz-border-radius: 16px;
     -ms-border-radius: 16px;
     -o-border-radius: 16px;
+
+}
+
+nav > button{
+    position: relative;
+    border-radius: 50%;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 5px;
+    left: 200px;
+    width: 40px;
+    height: 40px;
+}
+
+nav > input{
+    position: relative;
+    height: 35px;
+    margin-top: 7px;
+    left: 50px;
 }
 
 .logo{
     position: relative;
     padding: 3px;
+    margin: 5px;
+    left: 5px;
     font-size: 30px;
     color: white;
 }
@@ -30,29 +51,39 @@ nav{
     position: relative;
     display: flex;
     width: 100%;
-    height: 600px;
+    height: 689px;
+    background-color: rgb(19,40,20);
 }
 .login{
     display: flex;
     position: relative;
     width: 100%;
-    height: 600px;
-    top: 20px;
-    font-size: 20px;
-    color: white;
+    height: 300px;
     flex-direction: column;
     justify-content: center;
-    margin: auto;
+    margin:auto;
 
+}
+
+.login > h2{
+    position: relative;
+    display: flex;
+    width: 300px;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    left: calc(85% - 450px);
+    margin-top: 20px;
+    padding: 10px;
+    z-index: 200;
 }
 
 .login > input{
     position: relative;
-    display: flex;
+    display: inline-flex;
     justify-content:center;
-    align-items:center;
     width: 300px;
-    font-size: 20px;
+    left:calc(10% + 150px);
+    font-size: 15px;
     margin: 10px;
     padding: 10px;
 }
@@ -61,38 +92,65 @@ nav{
     position: absolute;
     display: flex;
     width: 100%;
-    height: 600px;
+    height: 690px;
+}
+.login > label{
+    position: relative;
+    display: inline-flex;
+    width: 100px;
+    left: 200px;
+    font-size: 20px;
+    color:rgb(255, 255, 255);
+    z-index: 300;
 }
 
 .singin{
     display: none;
     position: relative;
-    width: 300px;
+    top:20px;
+    width: 90%;
     height: 30px;
     margin: auto;
     flex-direction: column;
     justify-content: center;
-
 }
 
 .singin > input{
 
     position: relative;
     font-size: 20px;
-    margin: 10px;
+    width:300px;
+    top: 80px;
+    margin: auto;
     padding: 10px;
+    z-index:2;
+
 }
 
 .singin > a{
+    position:relative;
+    margin:auto;
     padding: 5px;
+    z-index:12;
 }
 
-.singin > h2{
+.singin > img{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 600px;
+    z-index:1;
+}
+
+.back{
     position: relative;
-    left: 18%;
-    padding: 5px;
-    font-size: 40px;
-    
+    display: flex;
+    justify-content:center;
+    left:calc(10% + 150px);
+    width: 300px;
+    z-index: 200;
+    margin: 10px;
+    padding: 10px;
 }
 
 footer{
