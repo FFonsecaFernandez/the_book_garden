@@ -8,6 +8,12 @@ from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 import sqlite3
 
+class Item(BaseModel):
+    id: str
+    title: str | None = None
+    url: str | None = None
+
+
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="../frontend/static"), name="static")
@@ -65,3 +71,37 @@ async def read_item(item_id: int, q: Union[str, None] = None):
 #for fila in cursor:
 #    print(fila, "esta es la base de datos")
 #conexion.close()
+
+@app.post("/cover/post")
+async def cover_id(title,url):
+    conexion = sqlite3.connect("cover.db")
+    try:
+        conexion.execute("""create table cover (
+                              cover_id integer primary key autoincrement,
+                              title text,
+                              cover_url text
+                        )""")
+        print("se creo la tabla cover")                        
+    except sqlite3.OperationalError:
+        print("La tabla cover ya existe")
+
+    conexion = sqlite3.connect("cover.db")
+    conexion.execute("insert into cover(title,cover_url) values (?,?)", (title, url))
+    conexion.commit()     
+
+class Item(BaseModel):
+    id: str
+    title: str | None = None
+    url: str | None = None
+
+
+@app.get("/cover")
+async def obtener_cover(  ):
+    arr = [] 
+    conexion = sqlite3.connect("cover.db")
+    conexion.row_factory = sqlite3.Row
+    c = conexion.cursor()
+    c.execute('SELECT * FROM cover')
+    for r in c.fetchall():
+        arr.append( dict(r))
+    return arr    

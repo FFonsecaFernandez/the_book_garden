@@ -137,7 +137,7 @@ nav > input{
 .singin > img{
     position: absolute;
     display: flex;
-    width: 100%;
+    width: 600px;
     height: 600px;
     z-index:1;
 }

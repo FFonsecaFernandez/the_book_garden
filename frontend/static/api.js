@@ -3,7 +3,7 @@
 //http://openlibrary.org/api/volumes/brief/%3Cid-type%3E/%3Cid-value%3E.json
 //https://openlibrary.org/people/mekBot/books/already-read.json
  
- const fetchData = async () => {
+/* const fetchData = async () => {
    try{
       const res = await fetch("https://openlibrary.org/people/mekBot/books/already-read.json");
       if (!res.ok){
@@ -50,8 +50,31 @@ function libros(libro) {
                     article.appendChild(aut);
                 
                 
-             }}}
+             }}}*/
 
-           /*  fetch("http://openlibrary.org/api/volumes/brief/isbn/0596156715.json")
+             fetch('http://127.0.0.1:8000/cover?cover_id=*')
                .then((response) => response.json())
-               .then((data) => {console.log(data)})*/
+               .then((data) => {cover(data)})
+
+               function cover(data) {
+                  const url = [];
+                  const titulo = [];
+                  for (let i = 0; i < data.length; i++) {
+                          url.push(data[i].cover_url);
+                          titulo.push(data[i].title);
+                     }
+                     for (let i = 0; i < url.length; i++) {
+                        
+                  const main = document.querySelector("main");
+                  const article = document.createElement("article");
+                  const title = document.createTextNode(titulo[i]);
+                  const h2 = document.createElement("h2");
+                  const imag = document.createElement("img");
+                      main.appendChild(article);
+                      h2.appendChild(title);
+                      article.appendChild(h2);
+                      article.appendChild(imag);
+                      imag.src =`./images/${url[i]}`; 
+                     }
+
+               }
